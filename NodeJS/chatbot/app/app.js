@@ -21,5 +21,5 @@
     bot.dialog('/', function (session) {
         session.send('Hello world!');
     });
-
+     // from vs code
 }());
