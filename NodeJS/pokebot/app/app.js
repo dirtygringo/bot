@@ -1,7 +1,8 @@
 (function () {
     'use strict';
     var restify = require('restify'),
-        builder = require('botbuilder');
+        builder = require('botbuilder'),
+        config = require('./config.js');
 
     // Restify Server Setup
     var server = restify.createServer();
@@ -11,8 +12,8 @@
 
     // Create chat bot
     var connector = new builder.ChatConnector({
-        appId: process.env.MICROSOFT_APP_ID,
-        appPassword: process.env.MICROSOFT_APP_PASSWORD
+        appId: config.appId,
+        appPassword: config.appPassword
     });
 
     var bot = new builder.UniversalBot(connector);
